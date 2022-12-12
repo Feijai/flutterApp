@@ -73,3 +73,4 @@ e2e/e2e_account.ts
 adb.exe
 AdbWinApi.dll
 AdbWinUsbApi.dll
+/.dart_tool/
