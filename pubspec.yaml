@@ -18,10 +18,12 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/*
+    - assets/lufy.png
 
   fonts:
     - family: Cubic
       fonts:
-        - asset: font/Cubic_11_1.013_R.ttf
-
+        - asset: fonts/Cubic.ttf
+    - family: SourceSansPro
+      fonts:
+        - asset: fonts/SourceSansPro-Regular.ttf
