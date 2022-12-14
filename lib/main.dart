@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             // Row 也可以試試
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
                 radius: 50.0,
@@ -34,48 +35,53 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 1.5,
                     fontWeight: FontWeight.bold,
                   )),
+              SizedBox(
+                height: 50.0,
+                child: Divider(
+                  thickness: 1,
+                    color: Colors.teal.shade100
+                ),
+              ),
               Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25.0),
-                  child:Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.phone_android,
-                          color: Colors.pink,
-                          size: 50.0,
-                          semanticLabel: 'heart',
-                        ),
-                        SizedBox(width: 10.0,),
-                        Text('09351234567',style: TextStyle(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25.0),
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: ListTile(
+                      leading: Icon(
+                        Icons.phone_android,
+                        color: Colors.pink,
+                        size: 50.0,
+                        semanticLabel: 'heart',
+                      ),
+                      title: Text(
+                        '09351234567',
+                        style: TextStyle(
                           color: Colors.teal,
                           fontSize: 25.0,
                           fontFamily: 'Cubic',
                           fontWeight: FontWeight.bold,
-                        ),)
-                      ]
-                  )
+                        ),
+                      )),
+                ),
               ),
               Card(
                   color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25.0),
-                  child:Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.flood,
-                          color: Colors.teal[900],
-                          size: 50.0,
-                          semanticLabel: 'heart',
-                        ),
-                        SizedBox(width: 10.0,),
-                        Text('火星街京都三年阪二段66號',style: TextStyle(
-                          color: Colors.teal,
-                          fontSize: 20.0,
-                          fontFamily: 'Cubic',
-                          fontWeight: FontWeight.bold,
-                        ),)
-                      ]
-                  )
-              )
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25.0),
+                  child: ListTile(
+                      leading: Icon(
+                        Icons.flood,
+                        color: Colors.teal[900],
+                        size: 50.0,
+                        semanticLabel: 'heart',
+                      ),
+                      title: Text('火星街京都三年阪二段66號',
+                          style: TextStyle(
+                            color: Colors.teal,
+                            fontSize: 20.0,
+                            fontFamily: 'Cubic',
+                            fontWeight: FontWeight.bold,
+                          )))),
             ],
           ),
         ),
