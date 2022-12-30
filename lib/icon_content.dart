@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
-const bottomTextColor = Color(0xFF8D8E98);
-const textStyle = TextStyle(fontSize: 18.0, color: bottomTextColor)
 class IconContent extends StatelessWidget {
   IconContent(
       this.icon,
