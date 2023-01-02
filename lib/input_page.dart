@@ -25,6 +25,7 @@ class _InputPageState extends State<InputPage> {
   // }
 
   Gender? selectedGender;
+  int height = 100 ;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class _InputPageState extends State<InputPage> {
           ),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
                 child: Row(
@@ -71,8 +73,20 @@ class _InputPageState extends State<InputPage> {
               child: ReusableCard(
                   activeCardColor,
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('HEIGHT',style: textStyle,)
+                    Text('HEIGHT',style: textStyle,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                      Text('180',style: numberTextStyle,),
+                      Text('cm',style: textStyle,)
+                    ],),
+                    Slider(value: height.toDouble(),min: 120.0,max:250.0, onChanged: (){
+                      
+                    })
                   ],
                 ),
                   (){}
