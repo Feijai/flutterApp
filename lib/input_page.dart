@@ -25,7 +25,7 @@ class _InputPageState extends State<InputPage> {
   // }
 
   Gender? selectedGender;
-  int height = 100 ;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -72,25 +72,51 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: ReusableCard(
                   activeCardColor,
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('HEIGHT',style: textStyle,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
-                      children: <Widget>[
-                      Text('180',style: numberTextStyle,),
-                      Text('cm',style: textStyle,)
-                    ],),
-                    Slider(value: height.toDouble(),min: 120.0,max:250.0, onChanged: (){
-                      
-                    })
-                  ],
-                ),
-                  (){}
-              ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'HEIGHT',
+                        style: textStyle,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: <Widget>[
+                          Text(
+                            height.toString(),
+                            style: numberTextStyle,
+                          ),
+                          Text(
+                            'cm',
+                            style: textStyle,
+                          )
+                        ],
+                      ),
+                      SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          inactiveTrackColor: const Color(0xFF8D8E98),
+                          activeTickMarkColor: Colors.white,
+                          thumbColor: const Color(0xFFEB1555),
+                          overlayColor: const Color(0x29EB1555),
+                          thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          overlayShape: const RoundSliderOverlayShape(overlayRadius: 30.0)
+                        ),
+                        child: Slider(
+                          value:height.toDouble(),
+                          min: 120.0,
+                          max: 250.0,
+                          onChanged: (double newValue) {
+                            setState(() {
+                              height=newValue.toInt();
+                            });
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                  () {}),
             ),
             Expanded(
               child: Row(
